@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <!-- Awesome font icons -->
+        <script src="https://kit.fontawesome.com/1b4e907a2e.js"></script>
+    </head>
+    <body>
+        <header></header>
+        <main>
+                <div id="container">
+                    <h1>Shopping Summary</h1>
+                    <h2 class="total"></h2>
+                    <div id="products">
+                        <div class="product product-1">
+                            <div class="icons">
+                                    <i class="far fa-heart fa-2x"></i>
+                                    <i class="far fa-times-circle fa-2x icon-1"></i>
+                            </div>
+                            <div class="item img-container">   
+                                    <img src="img/perfume.jpg" alt="perfume" class="image">
+                                    <div class="overlay">
+                                            <div class="text">japanese cherry blossom</div>
+                                    </div>                       
+                            </div>
+                            <div class="item item-1">
+                                <button class="minus-btn">-</button>
+                                <input type="text" class="qte qte-perfume">
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="item price-1">                       
+                            </div>
+                        </div>
+                        <div class="product product-2">
+                                <div class="icons">
+                                        <i class="far fa-heart fa-2x"></i>
+                                        <i class="far fa-times-circle fa-2x icon-2"></i>
+                                </div>
+                            <div class="item img-container">
+                                <img src="img/vitaminE.jpg" alt="Vitamin E" class="image">
+                                <div class="overlay">
+                                        <div class="text">Vitamin E</div>
+                                </div> 
+                            </div>
+                            <div class="item item-2">
+                                <button class="minus-btn">-</button>
+                                <input type="text" class="qte qte-vitamin">
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="item price-2">                           
+                            </div>
+                        </div>
+                        <div class="product product-3">
+                                <div class="icons">
+                                        <i class="far fa-heart fa-2x"></i>
+                                        <i class="far fa-times-circle fa-2x icon-3"></i>
+                                </div>
+                            <div class="item img-container">
+                                <img src="img/bodyButter.jpg" alt="Body Butter">
+                                <div class="overlay">
+                                        <div class="text">Body Butter</div>
+                                </div> 
+                            </div>
+                            <div class="item item-3">
+                                <button class="minus-btn">-</button>
+                                <input type="text" class="qte qte-butter">
+                                <button class="plus-btn">+</button>
+                            </div>
+                            <div class="item price-3">                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <footer></footer>
+        <script type="text/javascript" src="script.js"></script> <!--Best Practice -->
+    </body>
+</html>

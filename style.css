@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0
+}
+body {
+    background-color: #2CB1BC;
+    color: white;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: bold;
+}
+#container {
+    background-color: pink;
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-around
+}
+#container h2 {
+    align-self: flex-end
+}
+/****************** Products ******************/
+#products{
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    color:#2CB1BC
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 15px;
+}
+.item {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+.item > img {
+    width:150px
+}
+.item >button {
+    width: 34px;
+    height: 34px;
+    margin: 5px;
+    border: 0pt transparent;
+    border-radius: 50%;
+    background-color: #efefef;
+    font-size: 18px;
+    color:#2CB1BC;
+    outline: 0;
+    cursor: pointer;
+}
+.item >button:hover {
+    background-color: #2CB1BC;
+    color:#efefef
+  }
+.item > .qte {
+    height: 25px;
+    max-width: 75px;
+    border: 0pt transparent;
+    border-radius: 25px;
+    background-color: #efefef;
+    font-size: 18px;
+    color:#2CB1BC;
+    outline: 0;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+/****************** images overlay ******************/
+.img-container{
+    position: relative;
+}
+.image{
+    display: block
+}
+  .overlay {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #2CB1BC;
+  }
+  .img-container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /****************** Icons ******************/
+  .icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50px;
+      margin-right: -100px;
+  }
+  .fa-heart, .fa-times-circle{
+      color: #2CB1BC;
+  }
+  .fa-heart:hover{
+      color: red;
+      cursor: pointer;
+      animation: fa-spin 1s
+  }
+  .fa-times-circle:hover{
+      cursor: pointer;
+  }
