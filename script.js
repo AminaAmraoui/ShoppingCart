@@ -4,120 +4,60 @@ for (let quantity of quantities){
     quantity.setAttribute('value',1)
 }
 /*************** Setting initial prices ****************/
-const pu1=25;
-const pu2=25;
-const pu3=25;
-let price1=pu1;
-let price2=pu2;
-let price3=pu3;
-let total=price1+price2+price3
-document.querySelector('.price-1').innerHTML=price1+' dt'
-document.querySelector('.price-2').innerHTML=price2+' dt'
-document.querySelector('.price-3').innerHTML=price3+' dt'
+var price= [];
+var pu=[];
+for (let i=1;i<=3;i++){
+price[i]=25;
+pu[i]=25;
+}
+let total=price[1]+price[2]+price[3]
+document.querySelector('.price-1').innerHTML=price[1]+' dt'
+document.querySelector('.price-2').innerHTML=price[2]+' dt'
+document.querySelector('.price-3').innerHTML=price[3]+' dt'
 /*************** Total price ****************/
 document.querySelector('.total').innerHTML=total+' dt'
-/*************** Shopping item 1 ****************/
+/*************** Shopping items ****************/
 
 /************ + button *************/
-document.querySelector('.item-1 > .plus-btn')
+for(let i=1;i<=3;i++){
+  document.querySelector(`.item-${i} > .plus-btn`)
 .addEventListener("click", function(e) {
-    document.querySelector('.qte-perfume').setAttribute('value',
-    Number(document.querySelector('.qte-perfume').getAttribute('value'))+1)
-    price1=price1+pu1
-    total=total+pu1
-    document.querySelector('.price-1').innerHTML=price1+' dt'
-    document.querySelector('.total').innerHTML=total+' dt'
+    document.querySelector(`.qte-${i}`).setAttribute('value',
+    Number(document.querySelector(`.qte-${i}`).getAttribute('value'))+1);
+    price[i]=price[i]+pu[i];
+    total=total+pu[i];
+    document.querySelector(`.price-${i}`).innerHTML=price[i]+' dt';
+    document.querySelector('.total').innerHTML=total+' dt';
 });
+}
 /************ - button *************/
-document.querySelector('.item-1 > .minus-btn')
+for (let i=1;i<=3;i++){
+  document.querySelector(`.item-${i} > .minus-btn`)
 .addEventListener("click", function(e) {
-    if(Number(document.querySelector('.qte-perfume').getAttribute('value')) >1){
-        document.querySelector('.qte-perfume').setAttribute('value',
-        Number(document.querySelector('.qte-perfume').getAttribute('value'))-1)
-        price1=price1-pu1
-        total=total-pu1
-        document.querySelector('.price-1').innerHTML=price1+' dt'
-        document.querySelector('.total').innerHTML=total+' dt'
+    if(Number(document.querySelector(`.qte-${i}`).getAttribute('value')) >1){
+        document.querySelector(`.qte-${i}`).setAttribute('value',
+        Number(document.querySelector(`.qte-${i}`).getAttribute('value'))-1);
+        price[i]=price[i]-pu[i];
+        total=total-pu[i];
+        document.querySelector(`.price-${i}`).innerHTML=price[i]+' dt';
+        document.querySelector('.total').innerHTML=total+' dt';
     } else {
-        document.querySelector('.qte-perfume').setAttribute('value',1)
+        document.querySelector(`.qte-${i}`).setAttribute('value',1);
     }
     
 });
-/*************** Shopping item 2 ****************/
+}
 
-/************ + button *************/
-document.querySelector('.item-2 > .plus-btn')
-.addEventListener("click", function(e) {
-    document.querySelector('.qte-vitamin').setAttribute('value',
-    Number(document.querySelector('.qte-vitamin').getAttribute('value'))+1)
-    price2=price2+pu2
-    total=total+pu2
-    document.querySelector('.price-2').innerHTML=price2+' dt'
-    document.querySelector('.total').innerHTML=total+' dt'
+/*************** Icone close items ****************/
+for(let i=1;i<=3;i++){
+document.querySelector(`.icon-${i}`)
+       .addEventListener("click", function(e) {
+        total=total-price[i];
+        document.querySelector('.total').innerHTML=total+' dt';
+        document.querySelector(`.product-${i}`).remove();
 });
-/************ - button *************/
-document.querySelector('.item-2 > .minus-btn')
-.addEventListener("click", function(e) {
-    if(Number(document.querySelector('.qte-vitamin').getAttribute('value')) >1){
-        document.querySelector('.qte-vitamin').setAttribute('value',
-        Number(document.querySelector('.qte-vitamin').getAttribute('value'))-1)
-        price2=price2-pu2
-        total=total-pu2
-        document.querySelector('.price-2').innerHTML=price2+' dt'
-        document.querySelector('.total').innerHTML=total+' dt'
-    } else {
-        document.querySelector('.qte-vitamin').setAttribute('value',1)
-    }
-    
-});
-/*************** Shopping item 3 ****************/
+}
 
-/************ + button *************/
-document.querySelector('.item-3 > .plus-btn')
-.addEventListener("click", function(e) {
-    document.querySelector('.qte-butter').setAttribute('value',
-    Number(document.querySelector('.qte-butter').getAttribute('value'))+1)
-    price3=price3+pu3
-    total=total+pu3
-    document.querySelector('.price-3').innerHTML=price3+' dt'
-    document.querySelector('.total').innerHTML=total+' dt'
-});
-/************ - button *************/
-document.querySelector('.item-3 > .minus-btn')
-.addEventListener("click", function(e) {
-    if(Number(document.querySelector('.qte-butter').getAttribute('value')) >1){
-        document.querySelector('.qte-butter').setAttribute('value',
-        Number(document.querySelector('.qte-butter').getAttribute('value'))-1)
-        price3=price3-pu3
-        total=total-pu3
-        document.querySelector('.price-3').innerHTML=price3+' dt'
-        document.querySelector('.total').innerHTML=total+' dt'
-    } else {
-        document.querySelector('.qte-butter').setAttribute('value',1)
-    }
-    
-});
-/*************** Icone close item 1 ****************/
-document.querySelector('.icon-1')
-       .addEventListener("click", function(e) {
-        total=total-price1
-        document.querySelector('.total').innerHTML=total+' dt'
-        document.querySelector('.product-1').remove()
-});
-/*************** Icone close item 2 ****************/
-document.querySelector('.icon-2')
-       .addEventListener("click", function(e) {
-        total=total-price2
-        document.querySelector('.total').innerHTML=total+' dt'
-        document.querySelector('.product-2').remove()
-});
-/*************** Icone close item 3 ****************/
-document.querySelector('.icon-3')
-       .addEventListener("click", function(e) {
-        total=total-price3
-        document.querySelector('.total').innerHTML=total+' dt'
-        document.querySelector('.product-3').remove()
-});
 /*************** Icone Love ****************/
 let hearts = Array.from(document.querySelectorAll('.fa-heart'))
 for (let heart of hearts){
